@@ -1,64 +1,52 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import Link from 'next/link';
+import { Navbar } from '../src';
+import { Footer } from "../src"
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>next</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <header>
+          <Navbar />
+          <h1 className={styles.title}>
+            NEXTJS PRACTICE
+          </h1>
+        </header>
 
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        <Link href="#popularGames" className='btn btn-primary'>Get Started</Link>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+        <div className={styles.body}>
+          <div className={styles.grid} id="popularGames">
+            <a href="./games" className={styles.card}>
+              <h3>Dino &rarr;</h3>
+              <p>JavaScript remake of the chrome dino game</p>
+            </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+            <a href="https://nextjs.org/learn" className={styles.card}>
+              <h3>Kirby &rarr;</h3>
+              <p>(WORK IN PROGRESS)</p>
+            </a>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            <a
+              href="https://github.com/vercel/next.js/tree/master/examples"
+              className={styles.card}
+            >
+              <h3>Dog &rarr;</h3>
+              <p>(WORK IN PROGRESS)</p>
+            </a>
+          </div>
         </div>
+        <footer>
+            <Footer></Footer>
+        </footer>
       </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </footer>
 
       <style jsx>{`
         main {
